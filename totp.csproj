@@ -1,20 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
-    <DebugType>portable</DebugType>
-    <AssemblyName>totp</AssemblyName>
-    <OutputType>Exe</OutputType>
-    <PackageId>totp</PackageId>
-    <RuntimeIdentifiers>osx.10.12-x64</RuntimeIdentifiers>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
-    <RuntimeFrameworkVersion>1.1.0</RuntimeFrameworkVersion>
-  </PropertyGroup>
+    <PropertyGroup>
+        <AssemblyName>totp</AssemblyName>
+        <PackageId>totp</PackageId>
+        <LangVersion>latest</LangVersion>
+        <TargetFramework>net8.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
-    <PackageReference Include="OtpSharp.Core" Version="1.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
-    <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.0.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.1"/>
+        <PackageReference Include="Otp.NET" Version="1.3.0" />
+    </ItemGroup>
 
 </Project>
