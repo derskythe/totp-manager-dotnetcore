@@ -348,7 +348,7 @@ internal static class AesThenHmac
             //Decrypt Cipher Text from Message
             binaryWriter.Write(
                 encryptedMessage,
-                nonSecretPayloadLength  + iv.Length,
+                nonSecretPayloadLength + iv.Length,
                 encryptedMessage.Length - nonSecretPayloadLength - iv.Length - sentTag.Length
             );
         }
@@ -452,7 +452,7 @@ internal static class AesThenHmac
             throw new ArgumentException("Encrypted Message Required!", nameof(encryptedMessage));
 
         var cryptSalt = new byte[SALT_BIT_SIZE / 8];
-        var authSalt = new byte[SALT_BIT_SIZE  / 8];
+        var authSalt = new byte[SALT_BIT_SIZE / 8];
 
         //Grab Salt from Non-Secret Payload
         Array.Copy(encryptedMessage,
